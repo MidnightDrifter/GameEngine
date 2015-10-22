@@ -59,3 +59,9 @@ void Transform::subToY(int y)
 Transform::~Transform()
 {
 }
+
+
+void Transform::serialize(FILE** fpp)
+{
+
+}

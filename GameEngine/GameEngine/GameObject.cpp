@@ -9,6 +9,7 @@
 GameObject::GameObject()
 {
 	components = (new std::vector<Component*>);
+	objectID = -1;
 	//components->reserve(NUMBER_OF_COMPONENTS);
 	//t = components->begin();
 }
@@ -20,13 +21,30 @@ GameObject::GameObject(Component* i)
 	//t = components->end();
 }
 
-GameObject::GameObject(std::vector<Component*> * i)
+GameObject::GameObject(Component* i, int t)
 {
-	components = i;
+	components = (new std::vector<Component*>(1, i));
+	objectID = t;
 	//components->reserve(NUMBER_OF_COMPONENTS);
 	//t = components->end();
 }
 
+GameObject::GameObject(std::vector<Component*> * i)
+{
+	components = i;
+	objectID = -1;
+	//components->reserve(NUMBER_OF_COMPONENTS);
+	//t = components->end();
+}
+
+
+GameObject::GameObject(std::vector<Component*> * i, int t)
+{
+	components = i;
+	objectID = t;
+	//components->reserve(NUMBER_OF_COMPONENTS);
+	//t = components->end();
+}
 
 void GameObject::addComponent(Component* i)
 {
@@ -111,6 +129,18 @@ void GameObject::update()
 		if(components->at(i) != NULL)
 		{components->at(i)->update();}
 	}
+}
+
+
+
+int GameObject::getID()
+{
+	return objectID;
+}
+
+void GameObject::setID(int i)
+{
+	objectID = i;
 }
 /*
 

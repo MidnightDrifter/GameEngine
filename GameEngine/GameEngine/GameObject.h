@@ -4,6 +4,8 @@
 
 #include <vector>
 #include "Component.h"
+#include <stdio.h>
+
 //#include "Transform.h"
 //#include "Sprite.h"
 //#include "UpDown.h"
@@ -32,7 +34,9 @@ class GameObject
 public:
 	GameObject();
 	GameObject(Component* i);
+	GameObject(Component* i, int ID);
 	GameObject(std::vector<Component*> * i);
+	GameObject(std::vector<Component*> * i, int ID);
 	virtual ~GameObject();
 
 
@@ -47,6 +51,9 @@ public:
 	Component* getSprite();
 	Component* getController();
 
+	int getID();
+	void setID(int i);
+
 	void update();
 
 
@@ -60,6 +67,7 @@ public:
 
 private:
 	std::vector<Component *> * components;
+	int objectID;
 	//std::vector<Component*>::iterator t;
 };
 

@@ -47,3 +47,8 @@ SDL_Surface* Sprite::getSprite()
 	}
 
 }
+
+void Sprite::serialize(FILE** fpp)
+{
+
+}

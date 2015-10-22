@@ -119,12 +119,12 @@ int main(int argc, char* argv[])
 		
 
 		
-	//	SDL_Rect r = { trs->getX(), trs->getY(), IMAGE_WIDTH, IMAGE_HEIGHT };
-		SDL_Rect r = { transform->getX(), transform->getY(), IMAGE_WIDTH, IMAGE_HEIGHT };
+		SDL_Rect r = { trs->getX(), trs->getY(), IMAGE_WIDTH, IMAGE_HEIGHT };
+		//SDL_Rect r = { transform->getX(), transform->getY(), IMAGE_WIDTH, IMAGE_HEIGHT };
 		// dynamic_cast<Transform*>(zoroark.getTransform())->getX()
 		SDL_FillRect(pWinSurface, NULL, 0);
-		SDL_BlitSurface(image->getSprite(),NULL, pWinSurface, &r);
-		
+		//SDL_BlitSurface(image->getSprite(),NULL, pWinSurface, &r);
+		SDL_BlitSurface(spr->getSprite(), NULL, pWinSurface, &r);
 
 		SDL_UpdateWindowSurface(pWindow);
 		
